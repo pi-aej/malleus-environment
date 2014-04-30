@@ -5,13 +5,14 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Example.Common;
 
 namespace Example.Android
 {
 	[Activity (Label = "Example.Android", MainLauncher = true)]
 	public class MainActivity : Activity
 	{
-		int count = 1;
+		Counter c = new Counter();
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -25,7 +26,7 @@ namespace Example.Android
 			Button button = FindViewById<Button> (Resource.Id.myButton);
 			
 			button.Click += delegate {
-				button.Text = string.Format ("{0} clicks!", count++);
+				button.Text = string.Format ("{0} clicks!", c.Increment());
 			};
 		}
 	}

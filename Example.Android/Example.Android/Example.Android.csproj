@@ -62,4 +62,10 @@
     <AndroidResource Include="Resources\drawable\Icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\Example.Common\Example.Common.csproj">
+      <Project>{07303D3E-B118-4C52-AD23-EC353C07EC66}</Project>
+      <Name>Example.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

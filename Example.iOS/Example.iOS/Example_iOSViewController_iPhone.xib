@@ -19,6 +19,9 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <state key="normal" title="Press Here"/>
+                    <connections>
+                        <action selector="valueChangedButton:" destination="-1" eventType="valueChanged" id="bom-cc-7Yy"/>
+                    </connections>
                 </button>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 times" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qj2-VA-BpU">
                     <rect key="frame" x="132" y="108" width="56" height="21"/>
