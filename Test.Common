@@ -1,0 +1,3 @@
+#!/bin/bash
+
+mono NUnit-2.6.3/bin/nunit-console.exe Example.Common/Example.Common.Test/bin/Debug/Example.Common.Test.dll -xml:results.xml

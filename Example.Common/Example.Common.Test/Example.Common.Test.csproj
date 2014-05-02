@@ -5,13 +5,10 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{07303D3E-B118-4C52-AD23-EC353C07EC66}</ProjectGuid>
-    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{9AE6BD3D-B3ED-4E4F-AECA-CB23592511A5}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Example.Common</RootNamespace>
-    <AssemblyName>Example.Common</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile136</TargetFrameworkProfile>
+    <RootNamespace>Example.Common.Test</RootNamespace>
+    <AssemblyName>Example.Common.Test</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,8 +29,19 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Counter.cs" />
+    <Reference Include="System" />
+    <Reference Include="nunit.framework, Version=2.6.0.12051, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77">
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="CounterTest.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\Example.Common.csproj">
+      <Project>{07303D3E-B118-4C52-AD23-EC353C07EC66}</Project>
+      <Name>Example.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

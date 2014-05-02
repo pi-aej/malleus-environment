@@ -1,0 +1,3 @@
+#!/bin/bash
+
+xbuild Example.Common/Example.Common.sln
