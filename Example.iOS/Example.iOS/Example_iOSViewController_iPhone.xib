@@ -6,6 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Example_iOSViewController">
             <connections>
+                <outlet property="Main_Button" destination="oJ2-7A-3MZ" id="DMC-4J-WJC"/>
+                <outlet property="Main_Label" destination="qj2-VA-BpU" id="PdT-ek-B39"/>
                 <outlet property="view" destination="6" id="7"/>
             </connections>
         </placeholder>
@@ -19,12 +21,9 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <state key="normal" title="Press Here"/>
-                    <connections>
-                        <action selector="valueChangedButton:" destination="-1" eventType="valueChanged" id="bom-cc-7Yy"/>
-                    </connections>
                 </button>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 times" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qj2-VA-BpU">
-                    <rect key="frame" x="132" y="108" width="56" height="21"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 times" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qj2-VA-BpU">
+                    <rect key="frame" x="115" y="108" width="91" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>

@@ -2,11 +2,14 @@
 using System.Drawing;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using Example.Common;
 
 namespace Example.iOS
 {
 	public partial class Example_iOSViewController : UIViewController
 	{
+		Counter c = new Counter();
+
 		static bool UserInterfaceIdiomIsPhone {
 			get { return UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Phone; }
 		}
@@ -14,6 +17,7 @@ namespace Example.iOS
 		public Example_iOSViewController ()
 			: base (UserInterfaceIdiomIsPhone ? "Example_iOSViewController_iPhone" : "Example_iOSViewController_iPad", null)
 		{
+
 		}
 
 		public override void DidReceiveMemoryWarning ()
@@ -29,6 +33,19 @@ namespace Example.iOS
 			base.ViewDidLoad ();
 			
 			// Perform any additional setup after loading the view, typically from a nib.
+
+			try
+			{
+				Main_Button.TouchUpInside += (object sender, EventArgs e) => 
+				{
+					c.Increment();
+					Main_Button.SetTitle(c.Value().ToString(), UIControlState.Normal);
+					Main_Label.Text = String.Format("{0} Times!",c.Value());
+				};
+			}
+			catch(Exception ex) {
+				throw ex;
+			}
 		}
 	}
 }

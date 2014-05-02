@@ -14,6 +14,11 @@ namespace Example.Common
 		{
 			return (++count).ToString();
 		}
+
+		public int Value ()
+		{
+			return count;
+		}
 	}
 }
 
