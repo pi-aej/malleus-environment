@@ -1,8 +1,9 @@
 ﻿using System;
+using Cirrious.MvvmCross.ViewModels;
 
 namespace Example.Common
 {
-	public class Counter
+	public class Counter : MvxViewModel
 	{
 		int count = 0;
 
