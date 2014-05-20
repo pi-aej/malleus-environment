@@ -11,14 +11,22 @@ namespace Example.Common
 		{
 		}			
 
-		public string Increment()
+		public int Increment()
 		{
-			return (++count).ToString();
+			return (++Value);
 		}
 
-		public int Value ()
+		public int Value
 		{
-			return count;
+			get 
+			{
+				return count;
+			}
+			private set 
+			{
+				count = value;
+				RaisePropertyChanged (() => Value);
+			}
 		}
 	}
 }
