@@ -28,16 +28,13 @@ namespace Example.Android
 			// Get our button from the layout resource,
 			// and attach an event to it
 			Button button = FindViewById<Button> (Resource.Id.myButton);
-			
-//			button.Click += delegate {
-//				button.Text = string.Format ("{0} clicks!", c.Increment());
-//			};
+
 			this.DataContext = c;
 
 			var set = this.CreateBindingSet<MainActivity,Counter>();
 
 			set.Bind(button).For("Click").To("IncrementCommand");
-
+			set.Bind (button).For ("Text").To ("Value");
 			set.Apply ();
 		}
 	}
