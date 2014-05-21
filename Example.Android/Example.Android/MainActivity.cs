@@ -6,11 +6,14 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Example.Common;
+using Cirrious.MvvmCross.Droid.Views;
 
 namespace Example.Android
 {
+
+	//var set = this.CreateBindingSet<ExampleiewController,TestViewModel> ();
 	[Activity (Label = "Example.Android", MainLauncher = true)]
-	public class MainActivity : Activity
+	public class MainActivity : MvxActivity
 	{
 		Counter c = new Counter();
 

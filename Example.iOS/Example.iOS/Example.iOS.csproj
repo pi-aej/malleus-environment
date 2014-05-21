@@ -91,10 +91,10 @@
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
     <Reference Include="Cirrious.MvvmCross">
-      <HintPath>..\..\..\mvvmcross_example\lib\Mvx\Touch\Cirrious.MvvmCross.dll</HintPath>
+      <HintPath>..\..\Mvx\Touch\Cirrious.MvvmCross.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.CrossCore">
-      <HintPath>..\..\..\mvvmcross_example\lib\Mvx\Portable\Cirrious.CrossCore.dll</HintPath>
+      <HintPath>..\..\Mvx\Touch\Cirrious.CrossCore.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
