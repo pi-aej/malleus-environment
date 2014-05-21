@@ -32,9 +32,13 @@ namespace Example.Android
 //			button.Click += delegate {
 //				button.Text = string.Format ("{0} clicks!", c.Increment());
 //			};
+			this.DataContext = c;
+
 			var set = this.CreateBindingSet<MainActivity,Counter>();
 
-			set.Bind (button).To (o => o.IncrementCommand);
+			set.Bind(button).For("Click").To("IncrementCommand");
+
+			set.Apply ();
 		}
 	}
 }
