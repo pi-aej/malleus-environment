@@ -16,6 +16,16 @@ namespace Example.Common
 			return (++Value);
 		}
 
+		public MvxCommand IncrementCommand
+		{
+			get 
+			{ 
+				return new MvxCommand(
+						() => (Increment())
+				); 
+			}
+		}
+
 		public int Value
 		{
 			get 

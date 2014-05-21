@@ -7,6 +7,7 @@ using Android.Widget;
 using Android.OS;
 using Example.Common;
 using Cirrious.MvvmCross.Droid.Views;
+using Cirrious.MvvmCross.Binding.BindingContext;
 
 namespace Example.Android
 {
@@ -28,9 +29,12 @@ namespace Example.Android
 			// and attach an event to it
 			Button button = FindViewById<Button> (Resource.Id.myButton);
 			
-			button.Click += delegate {
-				button.Text = string.Format ("{0} clicks!", c.Increment());
-			};
+//			button.Click += delegate {
+//				button.Text = string.Format ("{0} clicks!", c.Increment());
+//			};
+			var set = this.CreateBindingSet<MainActivity,Counter>();
+
+			set.Bind (button).To (o => o.IncrementCommand);
 		}
 	}
 }
