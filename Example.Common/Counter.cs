@@ -36,8 +36,18 @@ namespace Example.Common
 			{
 				count = value;
 				RaisePropertyChanged (() => Value);
+				RaisePropertyChanged (() => ValueStatement);
 			}
 		}
+
+		public string ValueStatement
+		{
+			get 
+			{
+				return string.Format ("{0} clicks!", count);
+			}
+		}
+
 	}
 }
 

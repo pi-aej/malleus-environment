@@ -34,8 +34,8 @@ namespace Example.Android
 			var set = this.CreateBindingSet<MainActivity,Counter>();
 
 			set.Bind(button).For("Click").To("IncrementCommand");
-			set.Bind (button).For ("Text").To ("Value");
-			set.Apply ();
+			set.Bind(button).For("Text").To ("ValueStatement");
+			set.Apply();
 		}
 	}
 }
