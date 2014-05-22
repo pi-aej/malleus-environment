@@ -6,11 +6,15 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Example.Common;
+using Cirrious.MvvmCross.Droid.Views;
+using Cirrious.MvvmCross.Binding.BindingContext;
 
 namespace Example.Android
 {
+
+	//var set = this.CreateBindingSet<ExampleiewController,TestViewModel> ();
 	[Activity (Label = "Example.Android", MainLauncher = true)]
-	public class MainActivity : Activity
+	public class MainActivity : MvxActivity
 	{
 		Counter c = new Counter();
 
@@ -24,10 +28,14 @@ namespace Example.Android
 			// Get our button from the layout resource,
 			// and attach an event to it
 			Button button = FindViewById<Button> (Resource.Id.myButton);
-			
-			button.Click += delegate {
-				button.Text = string.Format ("{0} clicks!", c.Increment());
-			};
+
+			this.DataContext = c;
+
+			var set = this.CreateBindingSet<MainActivity,Counter>();
+
+			set.Bind(button).For("Click").To("IncrementCommand");
+			set.Bind(button).For("Text").To ("ValueStatement");
+			set.Apply();
 		}
 	}
 }
