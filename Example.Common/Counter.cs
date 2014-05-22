@@ -11,15 +11,43 @@ namespace Example.Common
 		{
 		}			
 
-		public string Increment()
+		public int Increment()
 		{
-			return (++count).ToString();
+			return (++Value);
 		}
 
-		public int Value ()
+		public MvxCommand IncrementCommand
 		{
-			return count;
+			get 
+			{ 
+				return new MvxCommand(
+						() => (Increment())
+				); 
+			}
 		}
+
+		public int Value
+		{
+			get 
+			{
+				return count;
+			}
+			private set 
+			{
+				count = value;
+				RaisePropertyChanged (() => Value);
+				RaisePropertyChanged (() => ValueStatement);
+			}
+		}
+
+		public string ValueStatement
+		{
+			get 
+			{
+				return string.Format ("{0} clicks!", count);
+			}
+		}
+
 	}
 }
 
