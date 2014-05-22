@@ -11,7 +11,7 @@ namespace Example.Common.Test
 		{
 			Counter target = new Counter ();
 
-			Assert.AreEqual (0, target.Value(), "The initial Value was not zero");
+			Assert.AreEqual (0, target.Value, "The initial Value was not zero");
 		}
 			
 		[Test ()]
@@ -19,11 +19,11 @@ namespace Example.Common.Test
 		{
 			Counter target = new Counter ();
 
-			Assert.AreEqual (0, target.Value(), "The initial Value was not zero");
+			Assert.AreEqual (0, target.Value, "The initial Value was not zero");
 
 			target.Increment ();
 
-			Assert.AreEqual (1, target.Value(), "The incremented Value was not 1");
+			Assert.AreEqual (1, target.Value, "The incremented Value was not 1");
 		}
 
 		[Test ()]
@@ -31,15 +31,15 @@ namespace Example.Common.Test
 		{
 			Counter target = new Counter ();
 
-			Assert.AreEqual (0, target.Value(), "The initial Value was not zero");
+			Assert.AreEqual (0, target.Value, "The initial Value was not zero");
 
 			target.Increment ();
 
-			Assert.AreEqual (1, target.Value(), "The incremented Value was not 1");
+			Assert.AreEqual (1, target.Value, "The incremented Value was not 1");
 
 			target.Increment ();
 
-			Assert.AreEqual (2, target.Value(), "The incremented Value was not 2");
+			Assert.AreEqual (2, target.Value, "The incremented Value was not 2");
 		}
 	}
 }
