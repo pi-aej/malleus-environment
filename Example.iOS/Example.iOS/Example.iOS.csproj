@@ -96,6 +96,18 @@
     <Reference Include="Cirrious.CrossCore">
       <HintPath>..\..\Mvx\Touch\Cirrious.CrossCore.dll</HintPath>
     </Reference>
+    <Reference Include="Cirrious.MvvmCross.Binding">
+      <HintPath>..\..\Mvx\Touch\Cirrious.MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.CrossCore.Touch">
+      <HintPath>..\..\Mvx\Touch\Cirrious.CrossCore.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Binding.Touch">
+      <HintPath>..\..\Mvx\Touch\Cirrious.MvvmCross.Binding.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Touch">
+      <HintPath>..\..\Mvx\Touch\Cirrious.MvvmCross.Touch.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
@@ -111,6 +123,7 @@
     <Compile Include="Example_iOSViewController.designer.cs">
       <DependentUpon>Example_iOSViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Setup.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Example_iOSViewController_iPhone.xib" />

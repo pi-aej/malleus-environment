@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using Cirrious.MvvmCross.Touch.Views.Presenters;
+using Cirrious.CrossCore;
+using Cirrious.MvvmCross.ViewModels;
+using Cirrious.MvvmCross.Touch.Platform;
 
 namespace Example.iOS
 {
@@ -10,7 +14,7 @@ namespace Example.iOS
 	// User Interface of the application, as well as listening (and optionally responding) to
 	// application events from iOS.
 	[Register ("AppDelegate")]
-	public partial class AppDelegate : UIApplicationDelegate
+	public partial class AppDelegate : MvxApplicationDelegate 
 	{
 		// class-level declarations
 		UIWindow window;
@@ -25,7 +29,14 @@ namespace Example.iOS
 		public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 		{
 			window = new UIWindow (UIScreen.MainScreen.Bounds);
-			
+
+			// initialize app for single screen iPhone display
+			var presenter = new MvxTouchViewPresenter(this, window);
+			var setup = new Setup(this, presenter);
+			//Required so that InitializeLastChance is called and bindings are resolved
+			setup.Initialize();
+
+
 			viewController = new Example_iOSViewController ();
 			window.RootViewController = viewController;
 			window.MakeKeyAndVisible ();

@@ -3,10 +3,12 @@ using System.Drawing;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using Example.Common;
+using Cirrious.MvvmCross.Touch.Views;
+using Cirrious.MvvmCross.Binding.BindingContext;
 
 namespace Example.iOS
 {
-	public partial class Example_iOSViewController : UIViewController
+	public partial class Example_iOSViewController : MvxViewController
 	{
 		Counter c = new Counter();
 
@@ -17,7 +19,7 @@ namespace Example.iOS
 		public Example_iOSViewController ()
 			: base (UserInterfaceIdiomIsPhone ? "Example_iOSViewController_iPhone" : "Example_iOSViewController_iPad", null)
 		{
-
+			this.DataContext = c;
 		}
 
 		public override void DidReceiveMemoryWarning ()
@@ -36,12 +38,13 @@ namespace Example.iOS
 
 			try
 			{
-				Main_Button.TouchUpInside += (object sender, EventArgs e) => 
-				{
-					c.Increment();
-					Main_Button.SetTitle(c.Value().ToString(), UIControlState.Normal);
-					Main_Label.Text = String.Format("{0} Times!",c.Value());
-				};
+				var button = Main_Button;
+
+				var set = this.CreateBindingSet<Example_iOSViewController, Counter>();
+
+				set.Bind(button).For("TouchUpInside").To("IncrementCommand");
+				set.Bind(button).For("Title").To ("ValueStatement");
+				set.Apply();
 			}
 			catch(Exception ex) {
 				throw ex;
