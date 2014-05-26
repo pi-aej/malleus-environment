@@ -108,6 +108,9 @@
     <Reference Include="Cirrious.MvvmCross.Touch">
       <HintPath>..\..\Mvx\Touch\Cirrious.MvvmCross.Touch.dll</HintPath>
     </Reference>
+    <Reference Include="Calabash">
+      <HintPath>..\Components\calabash-1.168\lib\ios\Calabash.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
@@ -135,5 +138,11 @@
       <Project>{07303D3E-B118-4C52-AD23-EC353C07EC66}</Project>
       <Name>Example.Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="calabash">
+      <Version>1.168</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
   </ItemGroup>
 </Project>

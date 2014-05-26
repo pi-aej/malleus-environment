@@ -36,11 +36,14 @@ namespace Example.iOS
 			//Required so that InitializeLastChance is called and bindings are resolved
 			setup.Initialize();
 
-
 			viewController = new Example_iOSViewController ();
 			window.RootViewController = viewController;
 			window.MakeKeyAndVisible ();
-			
+
+			#if DEBUG
+			Xamarin.Calabash.Start();
+			#endif
+
 			return true;
 		}
 	}
